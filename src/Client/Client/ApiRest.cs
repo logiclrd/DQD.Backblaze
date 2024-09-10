@@ -107,7 +107,7 @@ namespace Bytewizer.Backblaze.Client
         public AccountInfo AccountInfo { get; } = new AccountInfo();
 
         /// <summary>
-        /// The authorization token to use with all calls other than <see cref="AuthorizeAccountAync"/>. This authorization token is valid for at most 24 hours.
+        /// The authorization token to use with all calls other than <see cref="AuthorizeAccountAsync"/>. This authorization token is valid for at most 24 hours.
         /// </summary>
         public AuthToken AuthToken { get; private set; }
 
@@ -157,7 +157,7 @@ namespace Bytewizer.Backblaze.Client
             _policy.ConnectAsync = () => ConnectAsync(keyId, applicationKey);
             _cache.Clear();
 
-            var results = await AuthorizeAccountAync(keyId, applicationKey, CancellationToken.None).ConfigureAwait(false);
+            var results = await AuthorizeAccountAsync(keyId, applicationKey, CancellationToken.None).ConfigureAwait(false);
             if (results.IsSuccessStatusCode)
             {
                 AuthToken = new AuthToken(results.Response.AuthorizationToken)

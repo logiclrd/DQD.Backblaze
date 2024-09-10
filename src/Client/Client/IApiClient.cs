@@ -26,7 +26,7 @@ namespace Bytewizer.Backblaze.Client
         AccountInfo AccountInfo { get; }
 
         /// <summary>
-        /// The authorization token to use with all calls other than <see cref="AuthorizeAccountAync"/>. 
+        /// The authorization token to use with all calls other than <see cref="AuthorizeAccountAsync"/>.
         /// This authorization token is valid for at most 24 hours.
         /// </summary>
         AuthToken AuthToken { get; }
@@ -119,7 +119,7 @@ namespace Bytewizer.Backblaze.Client
         /// <exception cref="AuthenticationException">Thrown when authentication fails.</exception>
         /// <exception cref="ApiException">Thrown when an error occurs during client operation.</exception>
 		/// The <see cref="AuthorizeAccountResponse" /> of this <see cref="IApiResults{T}.Response"/> value, or <c>null</c>, if the response was was error data.
-        Task<IApiResults<AuthorizeAccountResponse>> AuthorizeAccountAync(string keyId, string applicationKey, CancellationToken cancellationToken);
+        Task<IApiResults<AuthorizeAccountResponse>> AuthorizeAccountAsync(string keyId, string applicationKey, CancellationToken cancellationToken);
 
         /// <summary>
         /// Cancels the upload of a large file and deletes all parts that have been uploaded. 
